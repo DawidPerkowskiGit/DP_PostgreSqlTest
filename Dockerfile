@@ -5,7 +5,8 @@ WORKDIR /app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 #RUN ./mvnw dependency:resolve
-RUN mvn -f /app/pom.xml dependency:resolve
+#RUN mvn -f /app/pom.xml dependency:resolve
+CMD ["./mvnw", "dependency:resolve"]
 COPY src ./src
 
 FROM base as test

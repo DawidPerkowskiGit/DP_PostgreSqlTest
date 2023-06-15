@@ -2,8 +2,10 @@
 
 FROM eclipse-temurin:17-jdk as base
 #WORKDIR /app
-CMD ["/bin/mkdir", "/app"]
-CMD ["/bin/cd", "/app"]
+RUN mkdir -p /app
+RUN cd /app
+#CMD ["/bin/mkdir", "/app"]
+#CMD ["/bin/cd", "/app"]
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 CMD ["./mvnw", "dependency:resolve"]

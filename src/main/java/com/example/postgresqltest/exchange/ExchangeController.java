@@ -1,14 +1,10 @@
 package com.example.postgresqltest.exchange;
 
 import com.example.postgresqltest.parser.Parser;
-import com.example.postgresqltest.parser.PrintBeans;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.io.FileNotFoundException;
 
 @Service
 @RestController
@@ -38,6 +34,11 @@ public class ExchangeController {
     @GetMapping("/currencies")
     public String getCurrencies() {
         return currencyRepository.findAll().toString();
+    }
+
+    @GetMapping("")
+    public String home() {
+        return "Welcome to Exchange currency app developed with Java 17, Maven 3.9, Spring 3.1.0 and Render";
     }
 
 }

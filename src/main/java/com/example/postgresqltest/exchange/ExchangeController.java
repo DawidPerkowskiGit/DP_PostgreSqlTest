@@ -38,7 +38,7 @@ public class ExchangeController {
 
     @GetMapping("")
     public String home() {
-        return "Welcome to Exchange currency app developed with Java 17, Maven 3.9, Spring 3.1.0 and Render";
+        return "Welcome to Exchange currency app developed with Java 17, Maven 3.9, Spring 3.1.0 and Render || and testing webhook push to automate deploy";
     }
 
 }
